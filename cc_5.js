@@ -38,6 +38,23 @@ function calculateOvetimePay(rate, hours) {
 // Calculate taxes
 
 function calculateTaxes(grossPay){
-    let netPay = grossPay * 0.85, // Takes away 15% tax
-    return netPay;
+    let totalPay = grossPay * 0.85, // Takes away 15% tax
+    return totalPay;
+}
+
+// Process Payroll
+
+function processPayroll(employee) {
+    let basePay = calculateBasePay(employee.hourlyRate, employee.hoursWorked);
+    let overtimePay = calculateOvetimePay(employee.hourlyRate, employee.hoursWorked);
+    let grossPay = basePay + overtimePay;
+    let totalPay = calculateTaxes(grossPay);     
+
+  return {
+    name: employee.name,
+    basePay: basePay,
+    overtimePay: overtimePay,
+    grossPay: grossPay,
+    totalPay: totalPay
+  };
 }
