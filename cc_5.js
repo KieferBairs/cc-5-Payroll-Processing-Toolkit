@@ -59,6 +59,8 @@ function processPayroll(employee) {
   };
 }
 
+// loop through employee array and log payroll
+
 for (const employee of employees) {
     let payroll = processPayroll(employee);
     console.log(payroll);    
