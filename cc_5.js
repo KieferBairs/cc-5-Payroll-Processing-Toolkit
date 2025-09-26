@@ -38,7 +38,7 @@ function calculateOvetimePay(rate, hours) {
 // Calculate taxes
 
 function calculateTaxes(grossPay){
-    let totalPay = grossPay * 0.85, // Takes away 15% tax
+    let totalPay = grossPay * 0.85 // Takes away 15% tax
     return totalPay;
 }
 
@@ -57,4 +57,9 @@ function processPayroll(employee) {
     grossPay: grossPay,
     totalPay: totalPay
   };
+}
+
+for (const employee of employees) {
+    let payroll = processPayroll(employee);
+    console.log(payroll);    
 }
