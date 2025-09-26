@@ -37,3 +37,7 @@ function calculateOvetimePay(rate, hours) {
 
 // Calculate taxes
 
+function calculateTaxes(grossPay){
+    let netPay = grossPay * 0.85, // Takes away 15% tax
+    return netPay;
+}
