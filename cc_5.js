@@ -10,6 +10,16 @@ const employees = [
     {name: "Gabe", hourlyRate: 18, hoursWorked: 15},
 ]
 
-function calculateBasePay(params) {
-    
+// Create function calculating base pay
+
+function calculateBasePay(rate, hours) {
+    if (hours > 40) {
+        hours = 40;
+}
+return rate * hours
+}
+
+for (const employee of employees) {
+    let pay = calculateBasePay(employee.hourlyRate, employee.hoursWorked);
+    console.log(`${employee.name}'s base pay is : $${pay}`);  
 }
